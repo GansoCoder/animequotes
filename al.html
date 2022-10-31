@@ -16,7 +16,6 @@
       }
 
       .container > div {
-        
         font-size: 20px;
         margin: 20px;
         padding: 20px;
@@ -49,13 +48,16 @@
       let qt = document.getElementById("quoteText");
       let ct = document.getElementById("charText");
       
+        at.innerText = "Loading.."
+        qt.innerText = "Loading.."
+        ct.innerText = "Loading.."
 
       fetch("https://animechan.vercel.app/api/random")
         .then((response) => response.json()) 
         .then((quote) => {
-            at.innerHTML = quote.anime
-            qt.innerHTML = quote.quote
-            ct.innerHTML = quote.character
+            at.innerText = quote.anime
+            qt.innerText = quote.quote
+            ct.innerText = quote.character
         })
         
         
